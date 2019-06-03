@@ -1,0 +1,11 @@
+Pcs_initial = Pcs_average*rand(1,N);                                                                            % the initial transmit power
+%Pcs_initial = zeros(1,N);
+fid = fopen('C:\Users\NGUYEN XUAN PHU\Desktop\PLS\Data\Pcs_initial.txt','w');
+fprintf(fid, '%.32f \n',Pcs_initial);
+
+Pu_initial = Pu_average*rand(1,N-20)*10^(-2+2)*2;                                                                   % the initial jamming signal power
+a = Pu_average*rand(1,20)*10^(-5);
+%a = zeros(1,20);
+Pu_initial = [Pu_initial a];
+fid = fopen('C:\Users\NGUYEN XUAN PHU\Desktop\PLS\Data\Pu_initial.txt','w');
+fprintf(fid, '%.32f \n',Pu_initial);
